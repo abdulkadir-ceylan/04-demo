@@ -1,0 +1,48 @@
+.special-row {
+    margin-bottom: 10px;
+}
+
+.special-container {
+    margin: auto;
+    margin-top: 100px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-left: 10px;
+    min-width: 250px;
+}
+
+.left {
+    padding-top: 50px;
+}
+
+.tab-border {
+    border-bottom: solid 1px #0d6efd;
+}
+
+.nav-link {
+    font-weight: bold;
+    background-color: #c9c9c9;
+}
+
+.tab-close-icon {
+    display: inline;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+    margin-left: -12px;
+    margin-top: 2px;
+}
+
+.special-tab-button {
+    display: inline;
+}
+
+li {
+    margin-right: 10px;
+}
