@@ -66,6 +66,19 @@ export const Demo = () => {
         return element;
     }
 
+    const removeTabItem = (pageName) => {
+        const panelItem = document.getElementById(pageName);
+        const tabItem = document.getElementById(pageName+'-link');
+        if (tabItem !== null) {
+            tabItem.remove();
+        }
+        panelItem.innerHTML = '';
+        const allTabItem = document.getElementById('alltab');
+        if (allTabItem.children.length === 0) {
+            allTabItem.className = 'nav nav-pills mb-3'
+        }
+    }
+
     const addEventItem = () => {
         const xPageElementt = document.getElementById('xpage');
         const yPageElementt = document.getElementById('ypage');
@@ -75,6 +88,9 @@ export const Demo = () => {
         let zyInputItem = document.getElementById('z-y-input');
         let yxInputItem = document.getElementById('y-x-input');
         let zxInputItem = document.getElementById('z-x-input');
+        let xtabClose = document.getElementById('xpage-close');
+        let ytabClose = document.getElementById('ypage-close');
+        let ztabClose = document.getElementById('zpage-close');
 
 
         if (xxInputItem !== null) {
@@ -146,18 +162,28 @@ export const Demo = () => {
               });
         }
 
-    }
+        if (xtabClose !== null) {
+            xtabClose.addEventListener('click', function(event){
+                var targetId = event.target?.id;
+                var removeId = targetId.split('-');
+                removeTabItem(removeId[0])
+            })
+        }
 
-    const removeTabItem = (pageName) => {
-        console.log('page haburada')
-        console.log('page pageName: ',pageName)
-        const panelItem = document.getElementById(pageName);
-        const tabItem = document.getElementById(pageName+'-link');
-        tabItem.remove();
-        panelItem.innerHTML = '';
-        const allTabItem = document.getElementById('alltab');
-        if (allTabItem.children.length === 0) {
-            allTabItem.className = 'nav nav-pills mb-3'
+        if (ytabClose !== null) {
+            ytabClose.addEventListener('click', function(event){
+                var targetId = event.target?.id;
+                var removeId = targetId.split('-');
+                removeTabItem(removeId[0])
+            })
+        }
+
+        if (ztabClose !== null) {
+            ztabClose.addEventListener('click', function(event){
+                var targetId = event.target?.id;
+                var removeId = targetId.split('-');
+                removeTabItem(removeId[0])
+            })
         }
     }
 
@@ -178,10 +204,6 @@ export const Demo = () => {
 
             const root = ReactDOM.createRoot(document.getElementById(pageName));
             const divItem = document.getElementById(pageName);
-            const closeButton = document.getElementById(pageName+'-close');
-            closeButton.addEventListener('click', function(event){
-                removeTabItem(pageName)
-            })
             divItem.className = 'tab-pane fade active show ';
             rootTab.className = 'nav nav-pills mb-3 tab-border';
             root.render(element);
