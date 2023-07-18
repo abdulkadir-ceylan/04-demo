@@ -204,7 +204,7 @@ export const Demo = () => {
 
             const root = ReactDOM.createRoot(document.getElementById(pageName));
             const divItem = document.getElementById(pageName);
-            divItem.className = 'tab-pane fade active show ';
+            // divItem.className = 'tab-pane fade active show ';
             rootTab.className = 'nav nav-pills mb-3 tab-border';
             root.render(element);
 
@@ -255,7 +255,7 @@ export const Demo = () => {
                 <ul className="nav nav-pills mb-3" id='alltab' role="tablist" />
 
                 <div id='panellist' className="tab-content">
-                    <div className="tab-pane fade show active" id="xpage" role="tabpanel" tabIndex="0" />
+                    <div className="tab-pane fade" id="xpage" role="tabpanel" tabIndex="0" />
                     <div className="tab-pane fade" id="ypage" role="tabpanel"  tabIndex="0" /> 
                     <div className="tab-pane fade" id="zpage" role="tabpanel"  tabIndex="0" />
                 </div>
