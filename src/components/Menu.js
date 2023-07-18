@@ -11,6 +11,14 @@ export const Menu = () => {
           }
     }
 
+    const allTabPassive = () => {
+        let allTab = document.getElementById("alltab");
+        let allTabChildren = allTab.children;
+          for (let i = 0; i < allTabChildren.length; i++) {
+            allTabChildren[i].firstElementChild.className = "nav-link special-tab-button";
+          }
+    }
+
     const renderPageItem = async(pageName) => {
         let inputName = String(pageName).toLowerCase();
         let element;
@@ -199,10 +207,13 @@ export const Menu = () => {
             '</li>';
 
             allPanelHiden();
+            allTabPassive();
 
             const root = ReactDOM.createRoot(document.getElementById(pageName));
             const divItem = document.getElementById(pageName);
-            // divItem.className = 'tab-pane fade active show ';
+            divItem.className = 'tab-pane fade active show ';
+            const rootTabItem = document.getElementById(pageName+'-link');
+            rootTabItem.firstElementChild.className = 'nav-link special-tab-button active';
             rootTab.className = 'nav nav-pills mb-3 tab-border';
             root.render(element);
 
